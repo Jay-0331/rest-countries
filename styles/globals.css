@@ -17,11 +17,7 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
-  padding: 8px;
-  border-radius: 12px;
-  @apply w-max mb-5 shadow-light-neumorphism-xl dark:shadow-dark-neumorphism-xl ml-0 mr-4 md:mx-2 hover:shadow-light-neumorphism-l dark:hover:shadow-dark-neumorphism-l active:shadow-light-inner-neumorphism-l dark:active:shadow-dark-inner-neumorphism-l;
+  @apply w-max mb-5 rounded-xl no-underline text-inherit p-2 shadow-light-neumorphism-xl dark:shadow-dark-neumorphism-xl ml-0 mr-4 md:mx-2 hover:shadow-light-neumorphism-l dark:hover:shadow-dark-neumorphism-l active:shadow-light-inner-neumorphism-l dark:active:shadow-dark-inner-neumorphism-l;
 }
 
 ::-webkit-scrollbar {

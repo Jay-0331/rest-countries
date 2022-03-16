@@ -1,12 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import Link from 'next/link'
+import { useRouter } from "next/router";
 
 const Card = ({country}) => {
+  const router = useRouter()
+  const route = () => {
+    router.push("/" + country.cca3)
+  }
   
   return (
-    <Link href={"/" + country.cca3} passHref>
-      <div className="cursor-pointer flex flex-col justify-self-center w-64 md:w-[17rem] h-80 rounded-lg shadow-light-neumorphism-xl dark:shadow-dark-neumorphism-xl transition-transform duration-500 ease-in-out hover:scale-[1.03] hover:shadow-light-neumorphism-2xl dark:hover:shadow-dark-neumorphism-2xl">
+      <div onClick={route} className="cursor-pointer flex flex-col justify-self-center w-64 md:w-[17rem] h-80 rounded-lg shadow-light-neumorphism-xl dark:shadow-dark-neumorphism-xl transition-transform duration-500 ease-in-out hover:scale-[1.03] hover:shadow-light-neumorphism-2xl dark:hover:shadow-dark-neumorphism-2xl">
           <div className="w-full h-1/2">
             <img className="h-full w-full rounded-t-lg object-center object-cover" src={country.flags.png} alt={country.name.offical + " flag"} />
           </div>
@@ -17,7 +20,6 @@ const Card = ({country}) => {
             <p className=" text-[14px] leading-[22px]"><strong>Capital:</strong> {country.capital.length === 0 ? "-" : country.capital}</p>
           </div>
       </div>
-    </Link>
   )
 }
 
