@@ -1,15 +1,36 @@
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { HiSun, HiMoon } from 'react-icons/hi'
 
 const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
+  const [isDarkMode, setIsDarkMode] = useState();
+  
   const modeChange = () => {
-    setIsDarkMode(!isDarkMode)
-    document.documentElement.classList.toggle('dark')
+    if(isDarkMode === false){
+      setIsDarkMode(true)
+      document.documentElement.classList.add('dark')
+      localStorage.theme = "dark"
+    }
+    else {
+      setIsDarkMode(false)
+      document.documentElement.classList.remove('dark')
+      localStorage.theme = "light"
+    }
   };
 
+  useEffect(() => {
+    const userTheme = localStorage.getItem("theme")
+    if(userTheme === 'dark'){
+      setIsDarkMode(true)
+      document.documentElement.classList.add('dark')
+    }
+    else {
+      setIsDarkMode(false)
+      document.documentElement.classList.remove('dark')
+    }
+  }, [])
+  
+  
   return (
     <header className="static rounded-2xl shadow-light-neumorphism-xl dark:shadow-dark-neumorphism-xl m-3 md:m-6 px-4 py-2 md:px-8 md:py-4">
         <nav className="flex w-full items-center justify-between">
