@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Progress } from '../components/progress';
-
+import Head from "next/head";
 import Header from '../components/Header';
 import '../styles/globals.css'
 
@@ -30,6 +30,10 @@ function MyApp({ Component, pageProps}) {
   
   return(
     <>
+      <Head>
+        <title>Where In The World?</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Progress isAnimating={isAnimating}/>
       <Header/>
       <main className='flex items-center flex-col mx-4'>
