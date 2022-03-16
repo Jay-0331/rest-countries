@@ -27,7 +27,7 @@ const Home= ({ countries }) => {
     return (
         <>
             <Search filterCountry={filter}/>
-            <div className=" max-w-7xl mt-10 md:mt-14 place-items-center grid gap-12 md:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4">
+            <div className=" max-w-7xl my-10 md:my-14 place-items-center grid gap-12 md:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4">
                 {countries !== undefined && filteredCountries.map((item) => {
                     return <Card key={item.cca3} country={item}/>
                 })}   
