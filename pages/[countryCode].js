@@ -15,7 +15,8 @@ const Country= ({ country, borderCountries }) => {
     }
 
     return (
-        <section className="flex flex-col max-w-7xl m-6 md:m-12">
+        <>
+        {country !== undefined && <section className="flex flex-col max-w-7xl m-6 md:m-12">
             <div className="flex mb-12">
                 <button className="flex justify-between shadow-light-neumorphism-xl dark:shadow-dark-neumorphism-xl p-2 rounded-lg hover:shadow-light-neumorphism-l dark:hover:shadow-dark-neumorphism-l active:shadow-light-inner-neumorphism-l dark:active:shadow-dark-inner-neumorphism-l" onClick={back}>
                     <HiArrowNarrowLeft size={24}/>
@@ -26,7 +27,7 @@ const Country= ({ country, borderCountries }) => {
             </div>
             <div className="grid grid-flow-row-dense md:grid-cols-2 gap-16 md:gap-28">    
                 <article className="aspect-[3/2] p-2 shadow-light-neumorphism-xl dark:shadow-dark-neumorphism-xl rounded-xl">
-                    <img className="aspect-[3/2] w-full h-full object-cover object-center rounded-lg" src={country.flags.svg} alt={country.name + " flag"}/>
+                    <img className="aspect-[3/2] w-full h-full object-cover object-center rounded-lg" src={country.flag} alt={country.name + " flag"}/>
                 </article>
                 <article className="flex flex-col justify-center">
                     <div className=" mb-8">
@@ -70,7 +71,8 @@ const Country= ({ country, borderCountries }) => {
             <div>
                 
             </div>
-        </section>
+        </section>}
+        </>
     )
 }
 
