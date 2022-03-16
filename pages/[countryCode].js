@@ -57,7 +57,7 @@ const Country= ({ country, borderCountries }) => {
                     <div className="flex  flex-col md:flex-row mt-20 text-sm md:text-base">
                         <strong className="flex items-center min-w-max h-10">Border countries:</strong>
                         <div className="flex flex-wrap">
-                            {borderCountries.status === 400 ? <div className="cursor-default w-max h-10 p-2 rounded-xl shadow-light-neumorphism-l dark:shadow-dark-neumorphism-l mx-2">No Border Countries</div> : borderCountries.map(element => {
+                            {borderCountries.status === 400 ? <div className="cursor-default w-max h-10 p-2 rounded-xl shadow-light-neumorphism-l dark:shadow-dark-neumorphism-l md:ml-2">No Border Countries</div> : borderCountries.map(element => {
                                 return(
                                     <Link key={element.alpha3Code} href={"/" + element.alpha3Code}>
                                         {element.name}
