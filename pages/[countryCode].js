@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { HiArrowNarrowLeft, HiHome } from "react-icons/hi";
+import Image from "next/image";
 
 const Country= ({ country, borderCountries }) => {
     const router = useRouter();
@@ -26,8 +27,8 @@ const Country= ({ country, borderCountries }) => {
                 </button>
             </div>
             <div className="grid grid-flow-row-dense md:grid-cols-2 gap-16 md:gap-28">    
-                <article className="aspect-[3/2] p-2 shadow-light-neumorphism-xl dark:shadow-dark-neumorphism-xl rounded-xl">
-                    <img className="aspect-[3/2] w-full h-full object-cover object-center rounded-lg" src={country.flag} alt={country.name + " flag"}/>
+                <article className="aspect-[3/2] p-2 relative shadow-light-neumorphism-xl dark:shadow-dark-neumorphism-xl rounded-xl">
+                    <Image className="object-cover object-center rounded-lg" src={country.flag} alt={country.name + " flag"} layout="responsive" width={'100%'} height={'66.66666%'}/>
                 </article>
                 <article className="flex flex-col justify-center">
                     <div className=" mb-8">
