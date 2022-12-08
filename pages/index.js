@@ -9,7 +9,7 @@ const Home= ({ countries }) => {
 
     useEffect(() => {
         setFilteredCountries(countries.sort((a,b) => (a.name.common > b.name.common)? 1 : -1))
-    }, []);
+    }, [countries]);
 
     const filter = (e) => {
         if (e.target.name === "country") {
